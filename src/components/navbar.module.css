@@ -1,0 +1,28 @@
+.container {
+  height: 4rem;
+  padding-bottom: 0;
+  background-color: var(--color-background-dark);
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 2rem;
+}
+
+.bottom_gradient {
+  height: 5px;
+  bottom: -5px;
+  width: 100%;
+  position: absolute;
+
+  background: linear-gradient(
+    90deg,
+    #242424 0%,
+    var(--color-accent) 50%,
+    #242424 100%
+  );
+}
