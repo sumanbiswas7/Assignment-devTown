@@ -13,11 +13,14 @@
 
 .text_cont {
   padding-left: 3vw;
+  padding-block: 1rem;
 }
+
 .title {
   font-size: 1.65rem;
   color: var(--color-accent);
 }
+
 .desc {
   margin-top: calc(var(--spacing-default) * 0.4);
   font-size: 1.1rem;
@@ -32,7 +35,7 @@
 }
 
 .hero_prod_img {
-  max-width: 25vmax;
+  max-width: 30vmax;
   right: 0;
   bottom: 0;
 }
@@ -41,4 +44,28 @@
   margin-left: 1rem;
   color: var(--color-text-dark);
   font-weight: 500;
+}
+
+@media only screen and (max-width: 900px) {
+  .desc {
+    font-size: 1.5vmax;
+  }
+  .title {
+    font-size: 3vmax;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .hero_container {
+    flex-direction: column-reverse;
+  }
+  .desc {
+    font-size: 1.75vmax;
+  }
+  .hero_prod_img {
+    margin-block: 1rem;
+  }
+  .text_cont {
+    padding: 1rem;
+  }
 }

@@ -12,8 +12,19 @@ export const Button = styled.button<{}>`
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
+  outline: 1px solid transparent;
+  outline-offset: 2px;
 
   &:hover {
-    filter: brightness(0.85);
+    outline-color: var(--color-accent);
+  }
+
+  &:active {
+    outline-offset: 0;
+    filter: brightness(0.7);
+  }
+
+  @media only screen and (max-width: 900px) {
+    font-size: 1.25vmax;
   }
 `;
