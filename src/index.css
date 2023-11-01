@@ -12,6 +12,9 @@
   --color-text-dark: #b1b1b1;
 
   --color-accent: #dac0ad;
+
+  /* Spacing */
+  --spacing-default: 1rem;
 }
 
 body {

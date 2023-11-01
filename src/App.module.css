@@ -1,0 +1,44 @@
+.main_cont {
+  margin: calc(var(--spacing-default) * 2.5);
+}
+
+.hero_container {
+  background-color: var(--color-background-dark);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.text_cont {
+  padding-left: 3vw;
+}
+.title {
+  font-size: 1.65rem;
+  color: var(--color-accent);
+}
+.desc {
+  margin-top: calc(var(--spacing-default) * 0.4);
+  font-size: 1.1rem;
+  max-width: 55ch;
+  color: var(--color-text-dark);
+}
+
+.order_price_cont {
+  margin-top: calc(var(--spacing-default) * 0.75);
+  display: flex;
+  align-items: center;
+}
+
+.hero_prod_img {
+  max-width: 25vmax;
+  right: 0;
+  bottom: 0;
+}
+
+.price {
+  margin-left: 1rem;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
