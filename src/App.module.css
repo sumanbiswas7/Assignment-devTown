@@ -17,13 +17,13 @@
 }
 
 .title {
-  font-size: 1.65rem;
+  font-size: 3.5vmax;
   color: var(--color-accent);
 }
 
 .desc {
   margin-top: calc(var(--spacing-default) * 0.4);
-  font-size: 1.1rem;
+  font-size: 1.5vmax;
   max-width: 55ch;
   color: var(--color-text-dark);
 }
@@ -46,15 +46,6 @@
   font-weight: 500;
 }
 
-@media only screen and (max-width: 900px) {
-  .desc {
-    font-size: 1.5vmax;
-  }
-  .title {
-    font-size: 3vmax;
-  }
-}
-
 @media only screen and (max-width: 650px) {
   .hero_container {
     flex-direction: column-reverse;
@@ -68,4 +59,19 @@
   .text_cont {
     padding: 1rem;
   }
+}
+
+/* Browse Collection */
+.browse_cont {
+  display: flex;
+  justify-content: space-between;
+  margin-block: calc(var(--spacing-default) * 2);
+  padding-inline: var(--spacing-default);
+}
+.browse_txt {
+  font-size: 1.75rem;
+  color: var(--color-text-dark);
+}
+.filter_icon {
+  width: 1.35rem;
 }
