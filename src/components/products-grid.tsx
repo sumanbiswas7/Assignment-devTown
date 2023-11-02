@@ -25,48 +25,6 @@ export function ProductsGrid() {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
-  function handleSortChange(type: string) {
-    if (type === "name") {
-      const sortedProducts = DUMMY_PRODUCTS.sort((a, b) => {
-        const titleA = a.title.toUpperCase(); // Convert titles to uppercase for case-insensitive sorting
-        const titleB = b.title.toUpperCase();
-
-        if (titleA < titleB) {
-          return -1;
-        }
-        if (titleA > titleB) {
-          return 1;
-        }
-        return 0;
-      });
-
-      setProducts(sortedProducts);
-      setModal(false);
-    }
-    if (type === "desc") {
-      const sortedProducts = DUMMY_PRODUCTS.sort((a, b) => {
-        const descA = a.description.toUpperCase(); // Convert titles to uppercase for case-insensitive sorting
-        const descB = b.description.toUpperCase();
-
-        if (descA < descB) {
-          return -1;
-        }
-        if (descA > descB) {
-          return 1;
-        }
-        return 0;
-      });
-
-      setProducts(sortedProducts);
-      setModal(false);
-    }
-    if (type === "price") {
-      const sortedProducts = DUMMY_PRODUCTS.sort((a, b) => a.price - b.price);
-      setProducts(sortedProducts);
-      setModal(false);
-    }
-  }
-
   return (
     <div>
       {/* Browse Collection Text */}
@@ -109,6 +67,85 @@ export function ProductsGrid() {
     </div>
   );
 
+  /**
+   * ----------------------------------------------------
+   *    Main Function to handle soring and filtering
+   * ----------------------------------------------------
+   */
+  function handleSortChange(type: string) {
+    if (type === "name") {
+      const sortedProducts = DUMMY_PRODUCTS.sort((a, b) => {
+        const titleA = a.title.toUpperCase(); // Convert titles to uppercase for case-insensitive sorting
+        const titleB = b.title.toUpperCase();
+
+        if (titleA < titleB) {
+          return -1;
+        }
+        if (titleA > titleB) {
+          return 1;
+        }
+        return 0;
+      });
+
+      setProducts(sortedProducts);
+      setModal(false);
+    }
+    if (type === "desc") {
+      const sortedProducts = DUMMY_PRODUCTS.sort((a, b) => {
+        const descA = a.description.toUpperCase(); // Convert titles to uppercase for case-insensitive sorting
+        const descB = b.description.toUpperCase();
+
+        if (descA < descB) {
+          return -1;
+        }
+        if (descA > descB) {
+          return 1;
+        }
+        return 0;
+      });
+
+      setProducts(sortedProducts);
+      setModal(false);
+    }
+    if (type === "price") {
+      const sortedProducts = DUMMY_PRODUCTS.sort((a, b) => a.price - b.price);
+      setProducts(sortedProducts);
+      setModal(false);
+    }
+    if (type === "price1") {
+      // $1999 - $3999
+      const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
+        const price = product.price;
+        return price >= 1999 && price <= 3999;
+      });
+      setProducts(filteredProducts);
+      setModal(false);
+    }
+    if (type === "price2") {
+      // $4000 - $6999
+      const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
+        const price = product.price;
+        return price >= 4000 && price <= 6999;
+      });
+      setProducts(filteredProducts);
+      setModal(false);
+    }
+    if (type === "price3") {
+      // > $7000
+      const filteredProducts = DUMMY_PRODUCTS.filter((product) => {
+        const price = product.price;
+        return price >= 7000;
+      });
+      setProducts(filteredProducts);
+      setModal(false);
+    }
+  }
+
+  /**
+   * --------------------
+   *   Modal Component
+   * --------------------
+   */
   function FilterModal() {
     return (
       <div>
@@ -135,7 +172,28 @@ export function ProductsGrid() {
           </div>
           <div className={styles.modal_right_box}>
             <h3>Filter By</h3>
+            <Radio.Group onChange={handleSortChange}>
+              <Group
+                mt="xs"
+                display={"flex"}
+                style={{ flexDirection: "column" }}
+                align="start"
+              >
+                <Radio value="price1" label="Price ($1999 - $3999)" />
+                <Radio value="price2" label="Price ($4000 - $6999)" />
+                <Radio value="price3" label="Price (More than $7000)" />
+              </Group>
+            </Radio.Group>
           </div>
+
+          <RoundButton
+            onClick={() => {
+              setProducts(DUMMY_PRODUCTS);
+              setModal(false);
+            }}
+          >
+            X
+          </RoundButton>
         </div>
       </div>
     );
