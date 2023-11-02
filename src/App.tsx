@@ -2,7 +2,7 @@ import styles from "./App.module.css";
 import { NavBar } from "./components/navbar";
 import { ProductsGrid } from "./components/products-grid";
 import { Button } from "./components/styled/button";
-import { FilterButton } from "./components/styled/filter-button";
+import { RoundButton } from "./components/styled/round-button";
 
 function App() {
   function handleFilter() {}
@@ -32,9 +32,9 @@ function App() {
         {/* Browse Collection Text */}
         <div className={styles.browse_cont}>
           <p className={styles.browse_txt}>Browse from our collection</p>
-          <FilterButton onClick={handleFilter}>
+          <RoundButton onClick={handleFilter}>
             <img src="/filter-icon.svg" className={styles.filter_icon} />
-          </FilterButton>
+          </RoundButton>
         </div>
 
         {/* Products */}

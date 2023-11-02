@@ -4,6 +4,13 @@
   grid-gap: 1rem;
 }
 
+.pagination_btn_cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
 @media only screen and (max-width: 800px) {
   .grid_container {
     grid-template-columns: repeat(2, 1fr);
