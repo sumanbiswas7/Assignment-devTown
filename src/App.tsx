@@ -2,11 +2,8 @@ import styles from "./App.module.css";
 import { NavBar } from "./components/navbar";
 import { ProductsGrid } from "./components/products-grid";
 import { Button } from "./components/styled/button";
-import { RoundButton } from "./components/styled/round-button";
 
 function App() {
-  function handleFilter() {}
-
   return (
     <div>
       <NavBar />
@@ -27,14 +24,6 @@ function App() {
             </div>
           </div>
           <img src="/hero-product.webp" className={styles.hero_prod_img} />
-        </div>
-
-        {/* Browse Collection Text */}
-        <div className={styles.browse_cont}>
-          <p className={styles.browse_txt}>Browse from our collection</p>
-          <RoundButton onClick={handleFilter}>
-            <img src="/filter-icon.svg" className={styles.filter_icon} />
-          </RoundButton>
         </div>
 
         {/* Products */}
